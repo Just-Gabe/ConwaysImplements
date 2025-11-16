@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # REGRAS
-  
+
 # SOBREVIVENCIA
 # MORTE POR UNDERPOPULATION
 # MORTE POR SUPERPOPULACAO
@@ -35,7 +35,7 @@ inicializar() {
     echo "Gerando mundo aleatório..."
     for ((i=0; i<size; i++)); do
         if (( RANDOM % 4 == 0 )); then
-            grid[$i]=1
+    grid[$i]=1
         else
             grid[$i]=0
         fi
@@ -117,6 +117,7 @@ while true; do
     desenhar
     calcular_proxima_geracao
     
+    # Verifica input do usuário (non-blocking)
     # -t 0.01 define a velocidade (tempo de espera)
     read -t 0.01 -n 1 key
     
