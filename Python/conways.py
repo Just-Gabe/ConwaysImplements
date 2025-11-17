@@ -25,7 +25,11 @@ print(f'Seed de geração: {SEED}')
 # 4. NASCIMENTO: Uma célula morta com exatamente 3 vizinhos vivos torna-se viva.
 
 # Caracteres para representar as células (ANSI)
-COR_VIVA = "\033[42m \033[0m" # fundo colorido
+# cores = [
+#     "\033[40m  \033[0m", "\033[42m  \033[0m", "\033[43m  \033[0m", "\033[44m  \033[0m", "\033[45m  \033[0m"
+# ]
+#
+COR_VIVA = "\033[42m \033[0m"
 COR_MORTA = " "
 
 
@@ -34,6 +38,7 @@ def inicializar_grid(largura, altura):
     return [[1 if random.randint(0, 3) == 0 else 0 for _ in range(largura)] for _ in range(altura)]
 
 def desenhar_grid(grid):
+    # COR_VIVA = random.choice(cores) # TODO: achar um jeito disso aqui não doer os olhos
     buffer = ["\033[H"]
     for linha in grid:
         str_linha = "".join([COR_VIVA if celula == 1 else COR_MORTA for celula in linha])
