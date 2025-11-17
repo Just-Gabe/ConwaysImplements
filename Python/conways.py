@@ -21,7 +21,6 @@ print(f'Seed de geração: {SEED}')
 # 3. MORTE (SUPERPOPULAÇÃO): Uma célula viva com mais de 3 vizinhos vivos morre.
 # 4. NASCIMENTO: Uma célula morta com exatamente 3 vizinhos vivos torna-se viva.
 
-
 # Caracteres para representar as células (ANSI)
 COR_VIVA = "\033[42m \033[0m" # fundo colorido
 COR_MORTA = " "
