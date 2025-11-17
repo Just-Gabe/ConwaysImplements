@@ -5,10 +5,13 @@ import time
 import select
 import tty
 import termios
+import math
 
 if len(sys.argv) > 1:
-    SEED = sys.argv[1]
-    random.seed(SEED)
+    if sys.argv[1] == 'pi':
+        SEED = math.pi
+    else:
+        SEED = sys.argv[1]
 else:
     SEED = 42
     random.seed(SEED)
