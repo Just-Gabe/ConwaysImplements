@@ -6,7 +6,14 @@ import select
 import tty
 import termios
 
-# TODO: implementar configuração de seed
+if len(sys.argv) > 1:
+    SEED = sys.argv[1]
+    random.seed(SEED)
+else:
+    SEED = 42
+    random.seed(SEED)
+
+print(f'Seed de geração: {SEED}')
 
 # REGRAS DO JOGO DA VIDA DE CONWAY
 # 1. SOBREVIVÊNCIA: Uma célula viva com 2 ou 3 vizinhos vivos sobrevive.
